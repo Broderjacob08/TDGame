@@ -32,7 +32,7 @@ public class TowerScript : MonoBehaviour
     {
         FireRate = startingFireRate;
 
-        GetComponent<CircleCollider2D>().radius = range;
+        GetComponent<BoxCollider2D>().size = new Vector2(range, range);
     }
 
     // Update is called once per frame
