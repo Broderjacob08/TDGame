@@ -20,6 +20,8 @@ public class AIPathfinding : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
+        checkpointholder = GameObject.FindGameObjectWithTag("Checkpointholder");
+
         for (int i = 0; i < checkpointholder.transform.childCount; i++)
         {
             pathfinding.Add(checkpointholder.transform.GetChild(i).gameObject);
@@ -36,9 +38,9 @@ public class AIPathfinding : MonoBehaviour
         if (Vector2.Distance(pathfinding[index].transform.position, transform.position) <= Whentoturn)
         {
             index += 1;
-            if (index == pathfinding.Count-1)
+            if (index >= pathfinding.Count-1)
             {
-                gameObject.isStatic = true;
+                index = pathfinding.Count - 1;
             }
         }
     }
