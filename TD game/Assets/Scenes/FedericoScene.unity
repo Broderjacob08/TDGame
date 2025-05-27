@@ -775,7 +775,7 @@ GameObject:
   - component: {fileID: 683487831}
   - component: {fileID: 683487833}
   - component: {fileID: 683487830}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: AssaultTower
   m_TagString: Tower
   m_Icon: {fileID: 0}

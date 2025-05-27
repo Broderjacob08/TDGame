@@ -36,7 +36,7 @@ public class DetailUI : MonoBehaviour
 
                 Vector3 details = new Vector3(selectedObject.GetComponent<TowerScript>().attackDamage, selectedObject.GetComponent<TowerScript>().range, selectedObject.GetComponent<TowerScript>().startingFireRate);
                 AddDetailsToText(details.x, details.y, details.z);
-            }
+            }else if(hit == null || hit.tag != "Tower")
             {
                 detailCanvas.SetActive(false);
             }
