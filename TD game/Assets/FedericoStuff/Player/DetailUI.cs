@@ -27,6 +27,7 @@ public class DetailUI : MonoBehaviour
             Vector2 mousePos2D = new Vector2(mouseWorld.x, mouseWorld.y);
 
             Collider2D hit = Physics2D.OverlapPoint(mousePos2D);
+            Debug.Log(hit);
 
             if (hit != null && hit.tag == "Tower")
             {
