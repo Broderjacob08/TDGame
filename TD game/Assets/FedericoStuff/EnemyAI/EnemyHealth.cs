@@ -15,6 +15,8 @@ public class EnemyHealth : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log("Game Over");
+            
+
             Destroy(gameObject);
         }
     }
