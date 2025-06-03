@@ -13,43 +13,69 @@ public class TowerPlacement : MonoBehaviour
     // Store grid positions where objects have been placed
     private HashSet<Vector2> occupiedPositions = new HashSet<Vector2>();
 
+    public static bool isEditing;
+
+    // MoneyManager
+
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // Left click
+        if (isEditing)
         {
-            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mouseWorldPos.z = 0f;
-
-            Vector2 snappedPosition = new Vector2(
-                Mathf.Floor(mouseWorldPos.x / cellSize) * cellSize + cellSize / 2f,
-                Mathf.Floor(mouseWorldPos.y / cellSize) * cellSize + cellSize / 2f);
-
-            // Prevent placing if already occupied
-            if (occupiedPositions.Contains(snappedPosition))
+            if (Input.GetMouseButtonDown(0)) // Left click
             {
-                Debug.Log("Tile already occupied!");
-                return;
+                Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                mouseWorldPos.z = 0f;
+
+                Vector2 snappedPosition = new Vector2(
+                    Mathf.Floor(mouseWorldPos.x / cellSize) * cellSize + cellSize / 2f,
+                    Mathf.Floor(mouseWorldPos.y / cellSize) * cellSize + cellSize / 2f);
+
+                // Prevent placing if already occupied
+                if (occupiedPositions.Contains(snappedPosition))
+                {
+                    Debug.Log("Tile already occupied!");
+                    return;
+                }
+
+                SpawnTower(snappedPosition);
             }
 
-            SpawnTower(snappedPosition);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            i++;
-            if (i >= towers.Count)
+            if (Input.GetKeyDown(KeyCode.Tab))
             {
-                i = 0;
+                i++;
+                if (i >= towers.Count)
+                {
+                    i = 0;
+                }
             }
-
         }
     }
 
     void SpawnTower(Vector2 snappedPosition)
     {
-        GameObject tower = Instantiate(towers[i], snappedPosition, Quaternion.identity);
-        tower.transform.parent = towerEmpty.transform;
+        bool hasEnough = CheckCurrency();
 
-        occupiedPositions.Add(snappedPosition);
+        if (hasEnough)
+        {
+            GameObject tower = Instantiate(towers[i], snappedPosition, Quaternion.identity);
+            tower.transform.parent = towerEmpty.transform;
+
+            MoneyManager.currentMoney -= tower.GetComponent<TowerScript>().moneyValue;
+
+            occupiedPositions.Add(snappedPosition);
+        }  
+    }
+
+    bool CheckCurrency()
+    {
+        if (MoneyManager.currentMoney < towers[i].GetComponent<TowerScript>().moneyValue)
+        {
+            Debug.Log("Not Enough Money");
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 }

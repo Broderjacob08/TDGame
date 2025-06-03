@@ -9,19 +9,23 @@ public class DetailUI : MonoBehaviour
 
     public GameObject detailCanvas;
     public GameObject detailsTextBox;
+    public GameObject editingTextBox;
 
     [SerializeField] private List<TextMeshProUGUI> texts = new List<TextMeshProUGUI>();
+
+    public GameObject GameManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        TowerPlacement.isEditing = false;
         AddTextsToList();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !TowerPlacement.isEditing)
         {
             Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 mousePos2D = new Vector2(mouseWorld.x, mouseWorld.y);
@@ -41,6 +45,11 @@ public class DetailUI : MonoBehaviour
                 detailCanvas.SetActive(false);
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            ChangeMode();
+        }
     }
 
     void AddDetailsToText(float damage, float range, float firerate)
@@ -57,5 +66,11 @@ public class DetailUI : MonoBehaviour
         {
             texts.Add(child.GetComponent<TextMeshProUGUI>());
         }
+    }
+
+    void ChangeMode()
+    {
+        TowerPlacement.isEditing = !TowerPlacement.isEditing;
+        editingTextBox.GetComponent<TextMeshProUGUI>().text = "Editing: " + TowerPlacement.isEditing;
     }
 }

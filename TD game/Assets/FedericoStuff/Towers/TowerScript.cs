@@ -25,6 +25,8 @@ public class TowerScript : MonoBehaviour
 
     bool hasAttacked;
 
+    public int moneyValue;
+
     [SerializeField] private List<GameObject> enemy = new List<GameObject>();
 
     // Start is called before the first frame update
@@ -42,7 +44,7 @@ public class TowerScript : MonoBehaviour
         {
             if (enemy.Count > 0 && enemy[0] != null)
             {
-                enemy[0].GetComponent<EnemyHealth>().health -= attackDamage;
+                enemy[0].GetComponent<EnemyHealth>().currentHealth -= attackDamage;
                 hasAttacked = true;
             }
             else

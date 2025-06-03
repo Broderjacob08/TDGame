@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class CameraMovement : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class CameraMovement : MonoBehaviour
 
     [SerializeField] private KeyCode leftMoveButton = KeyCode.A;
     [SerializeField] private KeyCode rightMoveButton = KeyCode.D;
+
+    [SerializeField] private float negativeXLimit;
+    [SerializeField] private float positiveXLimit;
 
     Rigidbody2D rb;
 
@@ -20,11 +24,11 @@ public class CameraMovement : MonoBehaviour
     {
         rb.velocity = new Vector2();
 
-        if (Input.GetKey(leftMoveButton))
+        if (Input.GetKey(leftMoveButton) && transform.position.x > negativeXLimit)
         {
             rb.velocity = Vector2.left * moveSpeed;
         }
-        if (Input.GetKey(rightMoveButton))
+        if (Input.GetKey(rightMoveButton) && transform.position.x < positiveXLimit)
         {
             rb.velocity = Vector2.right * moveSpeed;
         }
