@@ -9,6 +9,7 @@ public class DetailUI : MonoBehaviour
 
     public GameObject detailCanvas;
     public GameObject detailsTextBox;
+    public GameObject editingTextBox;
 
     [SerializeField] private List<TextMeshProUGUI> texts = new List<TextMeshProUGUI>();
 
@@ -70,5 +71,6 @@ public class DetailUI : MonoBehaviour
     void ChangeMode()
     {
         TowerPlacement.isEditing = !TowerPlacement.isEditing;
+        editingTextBox.GetComponent<TextMeshProUGUI>().text = "Editing: " + TowerPlacement.isEditing;
     }
 }

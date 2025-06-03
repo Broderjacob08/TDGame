@@ -17,8 +17,6 @@ public class TowerPlacement : MonoBehaviour
 
     // MoneyManager
 
-    public List<int> values = new List<int>();
-
     void Update()
     {
         if (isEditing)
@@ -55,9 +53,29 @@ public class TowerPlacement : MonoBehaviour
 
     void SpawnTower(Vector2 snappedPosition)
     {
-        GameObject tower = Instantiate(towers[i], snappedPosition, Quaternion.identity);
-        tower.transform.parent = towerEmpty.transform;
+        bool hasEnough = CheckCurrency();
 
-        occupiedPositions.Add(snappedPosition);
+        if (hasEnough)
+        {
+            GameObject tower = Instantiate(towers[i], snappedPosition, Quaternion.identity);
+            tower.transform.parent = towerEmpty.transform;
+
+            MoneyManager.currentMoney -= tower.GetComponent<TowerScript>().moneyValue;
+
+            occupiedPositions.Add(snappedPosition);
+        }  
+    }
+
+    bool CheckCurrency()
+    {
+        if (MoneyManager.currentMoney < towers[i].GetComponent<TowerScript>().moneyValue)
+        {
+            Debug.Log("Not Enough Money");
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 }

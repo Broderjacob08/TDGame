@@ -875,7 +875,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &543224540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1151,7 +1151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8bf5d376a78d0b4e894269def3e05d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  maxHealth: 0
+  currentHealth: 0
   Healthbar: {fileID: 0}
   moneyValue: 0
 --- !u!1 &683487829
@@ -1189,6 +1190,7 @@ MonoBehaviour:
   attackDamage: 2
   startingFireRate: 6
   range: 3
+  moneyValue: 5
   enemy: []
 --- !u!212 &683487831
 SpriteRenderer:
@@ -1732,14 +1734,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1035801869}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8bf5d376a78d0b4e894269def3e05d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 15
-  Healthbar: {fileID: 524674545}
-  moneyValue: 0
+  maxHealth: 5
+  currentHealth: 0
+  Healthbar: {fileID: 0}
+  moneyValue: 2
 --- !u!114 &1035801871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2039,6 +2042,7 @@ MonoBehaviour:
   attackDamage: 5
   startingFireRate: 12
   range: 2
+  moneyValue: 10
   enemy: []
 --- !u!61 &1200834132
 BoxCollider2D:
@@ -2335,6 +2339,7 @@ MonoBehaviour:
   selectedObject: {fileID: 0}
   detailCanvas: {fileID: 543224539}
   detailsTextBox: {fileID: 370385695}
+  editingTextBox: {fileID: 858889305}
   texts: []
   GameManager: {fileID: 1717204203}
 --- !u!114 &1717204206
@@ -2367,7 +2372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stopWatch: 0
-  moneyPerSecond: 5
+  moneyPerSecond: 1
   stopwatchText: {fileID: 472002553}
   currencyText: {fileID: 1958752457}
 --- !u!1 &1720181399
@@ -2403,7 +2408,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8bf5d376a78d0b4e894269def3e05d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
+  maxHealth: 0
+  currentHealth: 0
   Healthbar: {fileID: 0}
   moneyValue: 0
 --- !u!114 &1720181401
