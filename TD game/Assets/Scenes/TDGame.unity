@@ -309,6 +309,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 5672951692037211706, guid: b8fc06feb0a3a0f43bbedcfbc71065f8, type: 3}
   - {fileID: 5409245041184190287, guid: dea8b218fd4a3fd4789a00c51bc9dc0a, type: 3}
+  - {fileID: 943745068812924455, guid: c7dff2ab62d046143a069b9e9de0a7a5, type: 3}
   startposition: {fileID: 0}
 --- !u!4 &276283293
 Transform:
@@ -3764,7 +3765,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.01
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3810,7 +3811,7 @@ MonoBehaviour:
   moveSpeed: 5
   leftMoveButton: 97
   rightMoveButton: 100
-  negativeXLimit: -5
+  negativeXLimit: -2.9
   positiveXLimit: 5
 --- !u!50 &1140810287
 Rigidbody2D:
