@@ -44,7 +44,7 @@ public class TowerScript : MonoBehaviour
         {
             if (enemy.Count > 0 && enemy[0] != null)
             {
-                enemy[0].GetComponent<EnemyHealth>().health -= attackDamage;
+                enemy[0].GetComponent<EnemyHealth>().currentHealth -= attackDamage;
                 hasAttacked = true;
             }
             else
