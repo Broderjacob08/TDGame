@@ -33,8 +33,9 @@ public class EnemyAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-            startAttackTimer = Random.Range(minAttackSpeed, maxAttackSpeed);
-            attackTimer = startAttackTimer;
+        castleTarget = GameObject.FindWithTag("Castle");
+        startAttackTimer = Random.Range(minAttackSpeed, maxAttackSpeed);
+        attackTimer = startAttackTimer;
     }
 
     // Update is called once per frame
