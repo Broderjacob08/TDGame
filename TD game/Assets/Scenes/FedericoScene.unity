@@ -1742,7 +1742,7 @@ MonoBehaviour:
   maxHealth: 5
   currentHealth: 0
   Healthbar: {fileID: 0}
-  moneyValue: 0
+  moneyValue: 2
 --- !u!114 &1035801871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2339,6 +2339,7 @@ MonoBehaviour:
   selectedObject: {fileID: 0}
   detailCanvas: {fileID: 543224539}
   detailsTextBox: {fileID: 370385695}
+  editingTextBox: {fileID: 858889305}
   texts: []
   GameManager: {fileID: 1717204203}
 --- !u!114 &1717204206
