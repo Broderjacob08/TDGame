@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Tower
   - GameManager
+  - Castle
   layers:
   - Default
   - TransparentFX
