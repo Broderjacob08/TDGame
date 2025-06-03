@@ -2336,7 +2336,7 @@ MonoBehaviour:
   detailCanvas: {fileID: 543224539}
   detailsTextBox: {fileID: 370385695}
   texts: []
-  GameManager: {fileID: 0}
+  GameManager: {fileID: 1717204203}
 --- !u!114 &1717204206
 MonoBehaviour:
   m_ObjectHideFlags: 0

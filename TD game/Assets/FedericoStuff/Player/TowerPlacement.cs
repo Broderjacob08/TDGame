@@ -15,6 +15,10 @@ public class TowerPlacement : MonoBehaviour
 
     public static bool isEditing;
 
+    // MoneyManager
+
+    public List<int> values = new List<int>();
+
     void Update()
     {
         if (isEditing)
@@ -45,7 +49,6 @@ public class TowerPlacement : MonoBehaviour
                 {
                     i = 0;
                 }
-
             }
         }
     }
