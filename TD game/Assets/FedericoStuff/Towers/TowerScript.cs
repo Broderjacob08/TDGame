@@ -25,6 +25,8 @@ public class TowerScript : MonoBehaviour
 
     bool hasAttacked;
 
+    public int moneyValue;
+
     [SerializeField] private List<GameObject> enemy = new List<GameObject>();
 
     // Start is called before the first frame update

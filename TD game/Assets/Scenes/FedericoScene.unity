@@ -1189,6 +1189,7 @@ MonoBehaviour:
   attackDamage: 2
   startingFireRate: 6
   range: 3
+  moneyValue: 5
   enemy: []
 --- !u!212 &683487831
 SpriteRenderer:
@@ -2039,6 +2040,7 @@ MonoBehaviour:
   attackDamage: 5
   startingFireRate: 12
   range: 2
+  moneyValue: 10
   enemy: []
 --- !u!61 &1200834132
 BoxCollider2D:
@@ -2367,7 +2369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stopWatch: 0
-  moneyPerSecond: 5
+  moneyPerSecond: 2
   stopwatchText: {fileID: 472002553}
   currencyText: {fileID: 1958752457}
 --- !u!1 &1720181399
