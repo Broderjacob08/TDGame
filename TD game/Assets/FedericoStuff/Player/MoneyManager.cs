@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MoneyManager : MonoBehaviour
@@ -9,6 +11,8 @@ public class MoneyManager : MonoBehaviour
     public float stopWatch;
 
     [SerializeField] private int moneyPerSecond;
+    public TextMeshProUGUI stopwatchText;
+    public TextMeshProUGUI currencyText;
 
     int seconds;
 
@@ -22,6 +26,8 @@ public class MoneyManager : MonoBehaviour
     void Update()
     {
         StopWatchFunction();
+
+        currencyText.text = currentMoney.ToString();
     }
 
     void StopWatchFunction()
@@ -33,5 +39,7 @@ public class MoneyManager : MonoBehaviour
             currentMoney += moneyPerSecond;
             seconds++;
         }
+
+        stopwatchText.text = stopWatch.ToShortString(5);
     }
 }
