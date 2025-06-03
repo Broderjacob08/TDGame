@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 5851407985102390896}
   - component: {fileID: 5629080221083783211}
   m_Layer: 0
-  m_Name: Sprite-0002_0
-  m_TagString: Untagged
+  m_Name: Skeleton
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,4 +148,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpointholder: {fileID: 0}
-  Whentoturn: 0.2
+  Whentoturn: 0.1

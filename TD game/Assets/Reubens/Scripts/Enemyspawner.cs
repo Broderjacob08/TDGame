@@ -33,7 +33,7 @@ public class NewBehaviourScript : MonoBehaviour
         if(timer <= 0)
         {
             index = Random.Range(0, enemies.Count);
-            Instantiate(enemies[index],startposition.transform.position, Quaternion.identity);
+            Instantiate(enemies[index],startposition.transform.position, Quaternion.identity, transform);
             cooldown = Random.Range(5, 11);
             timer = cooldown;
         }
