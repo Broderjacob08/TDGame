@@ -8,6 +8,8 @@ public class EnemyHealth : MonoBehaviour
     public float health;
     [SerializeField] private Image Healthbar;
 
+    public int moneyValue;
+
     void Update()
     {
         Healthbar.fillAmount -= health / 100;
@@ -15,7 +17,7 @@ public class EnemyHealth : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log("Game Over");
-            
+            MoneyManager.currentMoney += moneyValue;
 
             Destroy(gameObject);
         }
