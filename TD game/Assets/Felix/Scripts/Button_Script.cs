@@ -38,7 +38,6 @@ public class Button_Script : MonoBehaviour
 
     public void OnClick()
     {
-        transform.localScale = new Vector2(300, 60);
-        image.color = Color.green;
+        
     }
 }
