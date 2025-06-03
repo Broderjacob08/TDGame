@@ -16,9 +16,13 @@ public class AIPathfinding : MonoBehaviour
 
     public float Whentoturn;
 
+    SpriteRenderer spirt;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        spirt = GetComponent<SpriteRenderer>();
 
         checkpointholder = GameObject.FindGameObjectWithTag("Checkpointholder");
 
@@ -31,8 +35,15 @@ public class AIPathfinding : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.up, rb.velocity));
+       
         
+        if(rb.velocity.x < 0)
+        {
+            spirt.flipX = true;
+        } else
+        {
+            spirt.flipX = false;
+        }
         rb.velocity = (pathfinding[index].transform.position - transform.position).normalized;
 
         if (Vector2.Distance(pathfinding[index].transform.position, transform.position) <= Whentoturn)
