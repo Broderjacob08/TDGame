@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1502122409264848629}
   - component: {fileID: 6769137872526497940}
   - component: {fileID: -83160027490890770}
+  - component: {fileID: 204700384179264384}
   m_Layer: 0
   m_Name: ShinyMimicBarrel
   m_TagString: Untagged
@@ -149,3 +150,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointholder: {fileID: 0}
   Whentoturn: 0.4
+--- !u!114 &204700384179264384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7304523904879233444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec4d9d1ff276a44186679987d973615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyType: 1
+  castleTarget: {fileID: 0}
+  attackDamage: 20
+  maxAttackSpeed: 0
+  minAttackSpeed: 0
+  maxDistanceForRangedAttacks: 5
+  inRange: 0
+  inArcherRange: 0

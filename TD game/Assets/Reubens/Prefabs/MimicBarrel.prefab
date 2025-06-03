@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4416726504990463106}
   - component: {fileID: 2797151771804174927}
   - component: {fileID: 790420449846411439}
+  - component: {fileID: 5408076778969022904}
+  - component: {fileID: 1187660335430623852}
   m_Layer: 0
   m_Name: MimicBarrel
   m_TagString: Enemy
@@ -149,3 +151,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointholder: {fileID: 0}
   Whentoturn: 0.2
+--- !u!114 &5408076778969022904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943745068812924455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec4d9d1ff276a44186679987d973615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyType: 1
+  castleTarget: {fileID: 0}
+  attackDamage: 10
+  maxAttackSpeed: 0
+  minAttackSpeed: 0
+  maxDistanceForRangedAttacks: 2
+  inRange: 0
+  inArcherRange: 0
+--- !u!114 &1187660335430623852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943745068812924455}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8bf5d376a78d0b4e894269def3e05d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  currentHealth: 0
+  Healthbar: {fileID: 0}
+  moneyValue: 0

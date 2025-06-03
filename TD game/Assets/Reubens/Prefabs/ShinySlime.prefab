@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 5082730802905888636}
   - component: {fileID: -5674456748914479683}
   - component: {fileID: 4860336644230589050}
+  - component: {fileID: -3737895046303833734}
+  - component: {fileID: -1425356727619806701}
   m_Layer: 0
   m_Name: ShinySlime
   m_TagString: Enemy
@@ -149,3 +151,39 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-3737895046303833734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6695461897465430720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8bf5d376a78d0b4e894269def3e05d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  currentHealth: 0
+  Healthbar: {fileID: 0}
+  moneyValue: 0
+--- !u!114 &-1425356727619806701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6695461897465430720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec4d9d1ff276a44186679987d973615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyType: 0
+  castleTarget: {fileID: 0}
+  attackDamage: 10
+  maxAttackSpeed: 0
+  minAttackSpeed: 0
+  maxDistanceForRangedAttacks: 2
+  inRange: 0
+  inArcherRange: 0
